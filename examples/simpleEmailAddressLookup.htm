@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>OneID: Simple Email Address Lookup</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, "MS Trebuchet", sans-serif;
+			padding: 1em;
+			color:#333;
+			background-color:#efefef;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h2>oneid-cfml-sdk</h2>
+	</header>
+
+	<article>
+		<h3>Simple Email Address Lookup</h3>
+		<p>This example only uses JavaScript to communicate with OneID to auto-fill a user's email address.</p>
+		<p>
+			<label for="email">Email:</label>
+			<input type="text" id="email" />
+		</p>
+		<p>
+			<button onclick="OneIdForm.fill(formDataMap);">Get Email Address &gt;</button>
+		</p>
+		<p>If you don't already have an account with OneID, clicking the button will walk you through the process of creating one and setting some initial attributes.</p>
+		<p><strong>Tip:</strong> <em>Your OneID account will need an email address for this example to work.</em></p>
+	</article>
+
+	<script src="https://my.oneid.com/api/js/includeexternal.js"></script>
+	<script src="https://my.oneid.com/api/form/form.js"></script>
+	<script type="text/javascript">
+		formDataMap = {
+			"formData" : {
+				"email" : {
+					"oneid_attribute" :  ["email"],
+					"selector_type" : "base"
+				}
+			}
+		};
+	</script>
+
+</body>
+</html>
